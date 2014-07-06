@@ -22,6 +22,8 @@ for arg in $ARGS; do
     if [ "$FRAMEWORK" = true ]; then
         echo "#[link(name = \"$arg\", kind = \"framework\")]"
         FRAMEWORK=false
+    elif [ "$arg" = "-lglfw" ] && [ -n "$OUT_DIR" ]; then
+        echo "#[link(name = \"glfw\", kind = \"static\")]"
     elif [ "$arg" = "-framework" ]; then
         FRAMEWORK=true
     elif [ `echo $arg | cut -c-2` = -l ]; then
