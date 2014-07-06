@@ -16,7 +16,7 @@
 RUSTC               = rustc
 RUSTDOC             = rustdoc
 
-GLFW_LIB_DIR        ?=
+GLFW_LIB_DIR        = $(OUT_DIR)
 LINK_ARGS           = $(shell sh etc/glfw-link-args.sh)
 
 SRC_DIR             = src
