@@ -24,7 +24,6 @@ for arg in $ARGS; do
         FRAMEWORK=false
     elif [ "$arg" = "-lglfw" ] && [ -n "$OUT_DIR" ]; then
         echo "#[link(name = \"glfw\", kind = \"static\")]"
-        echo "FUCK"
     elif [ "$arg" = "-framework" ]; then
         FRAMEWORK=true
     elif [ `echo $arg | cut -c-2` = -l ]; then
